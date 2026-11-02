@@ -1,1 +1,18 @@
 <app-logout-component></app-logout-component>
+<main>
+    <h2>Libros Registrados</h2>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Autor</th>
+        </thead>
+        <tbody>
+            @for (libro of libros; track $index) {
+                <tr>
+                    <td>{{ libro.nombre }}</td>
+                    <td>{{ libro.autor }}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>
