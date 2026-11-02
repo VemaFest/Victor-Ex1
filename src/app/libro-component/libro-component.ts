@@ -40,7 +40,13 @@ export class LibroComponent {
   }
 
   actualizarlibro(m : Libro) {
+    Object.assign(this.libros[this.indexEdit], m)
+    this.indexEdit = -1
+  }
 
+  editarlibro(index: number){
+    this.indexEdit = index;
+    this.libro = {...this.libros[index]};
   }
 
   refrescarFormulario() {
