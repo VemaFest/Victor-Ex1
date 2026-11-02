@@ -49,6 +49,12 @@ export class LibroComponent {
     this.libro = {...this.libros[index]};
   }
 
+  eliminarlibro(index: number) {
+    this.libros.splice(index, 1);
+    localStorage.setItem('ejemplos', JSON.stringify([this.libro]));
+    this.refrescarFormulario();
+  }
+
   refrescarFormulario() {
     this.libro = {id: 0, nombre: '', autor: ''};
     this.indexEdit = -1;

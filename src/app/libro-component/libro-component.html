@@ -28,10 +28,16 @@
                 <tr>
                     <td>{{ libro.nombre }}</td>
                     <td>{{ libro.autor }}</td>
-                    <td><input type="button" value="Editar" (click)="editarlibro(i)"></td>
+                    <td>
+                        <input type="button" value="Editar" (click)="editarlibro(i)">
+                        <input type="button" value="Eliminar" (click)="eliminarlibro(i)">
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
+    @if (libros.length === 0) {
+        <h3>No hay libros Registrados</h3>
+    }
 </main>
 
